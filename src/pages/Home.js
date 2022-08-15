@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
-  import {toast} from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Home = () => {
   const [minhaAgenda, setminhaAgenda] = useState([]);
@@ -24,7 +24,6 @@ const Home = () => {
       listarAgenda();
     }
   };
-
 
   return (
     <div className="container">
@@ -55,21 +54,14 @@ const Home = () => {
                 <td> {minhaAgenda.website}</td>
                 {/* cria a coluna de opções da minhaAgenda */}
                 <td>
-                  <Link
-                    to={`/view/${minhaAgenda.id}`}
-                  >
-                     <button className="btn btn-view"> Ver</button>
+                  <Link to={`/view/${minhaAgenda.id}`}>
+                    <button className="btn btn-view"> Ver</button>
                     {/* Ver */}
                   </Link>
-                  <Link
-                    to={`/update/${minhaAgenda.id}`}
-                  >
+                  <Link to={`/update/${minhaAgenda.id}`}>
                     <button className="btn btn-edit"> Editar</button>
-                   
                   </Link>
-                  <a
-                    onClick={() => apagarContatos(minhaAgenda.id)}
-                  >
+                  <a onClick={() => apagarContatos(minhaAgenda.id)}>
                     <button className="btn btn-delete">Apagar</button>
                     {/* Apagar */}
                   </a>
